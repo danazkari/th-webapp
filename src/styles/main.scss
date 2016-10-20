@@ -1,0 +1,101 @@
+$main-bg-color: #e9e9e9;
+$secondary-bg-color: #282B30;
+$accent-blue: #2196f3;
+$accent-black: #3B3F44;
+$accent-white: #ffffff;
+$accent-yellow: #e3a707;
+
+body,html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-color: $main-bg-color;
+    color: $accent-black;
+    font-family: 'OpenSans', sans-serif;
+    display: flex;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-app-container {
+    height: 90vh;
+    width: 90vw;
+    overflow: hidden;
+    background-color: $accent-white;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+        0px 4px 5px -2px rgba(0, 0, 0, 0.2),
+        0px 7px 10px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 16px 1px rgba(0, 0, 0, 0.12);
+}
+
+.main-header {
+    background: $secondary-bg-color;
+    color: $accent-white;
+    box-sizing: border-box;
+    padding: 50px;
+    flex: none;
+    display: flex;
+    align-items: center;
+
+    h1 {
+        margin-left: 1rem;
+        font-size: 3em;
+        flex: 1;
+    }
+
+    .logo {
+        width: 100px;
+        height: 100px;
+        flex: 1 1 100px;
+        max-width: 100px;
+    }
+
+    .cast-app-button {
+        background: none;
+        border: 0;
+        cursor: pointer;
+        .cast-icon {
+            width: 50%;
+            height: auto;
+        }
+    }
+}
+
+.loader-bar {
+    /*
+     * Taken from
+     * http://codepen.io/brunjo/pen/XJmbNz
+     */
+    height: 5px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #ddd;
+    &:before {
+        display: block;
+        position: absolute;
+        content: "";
+        left: -100%;
+        width: 100%;
+        height: 5px;
+        background-color: $accent-blue;
+        animation: loading 3s linear infinite;
+    }
+}
+
+@keyframes loading {
+    from {left: -100%; width: 30%;}
+    50% {width: 30%;}
+    70% {width: 70%;}
+    80% { left: 50%;}
+    95% {left: 120%;}
+    to {left: 100%;}
+}
