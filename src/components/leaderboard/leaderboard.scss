@@ -22,8 +22,8 @@
 
 
 .loaded-content-enter {
-    opacity: 0.1;
-    transform: translate3d(100%, 0, 0);
+    opacity: 0.01;
+    transform: translate3d(10%, 0, 0);
 }
 
 .loaded-content-enter.loaded-content-enter-active {
@@ -38,7 +38,7 @@
 }
 
 .loaded-content-leave.loaded-content-leave-active {
-    opacity: 0.1;
-    transform: translate3d(-200%, 0, 0);
+    opacity: 0.01;
+    transform: translate3d(-110%, 0, 0);
     transition: opacity 600ms, transform 600ms;
 }
